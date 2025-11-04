@@ -1,4 +1,5 @@
 import pygame
+import sys
 import random
 import math
 
@@ -101,36 +102,36 @@ def check_collision(bullet, asteroid):
 # create instance of class ship, attr are default
 ship = Ship()
 
-# create instances of class asteroid, attr are default
-asteroids = [Asteroid() for _ in range(10)]
+### create instances of class asteroid, attr are default
+##asteroids = [Asteroid() for _ in range(10)]
+##
+### create an empty list of bullet instances
+##bullets = []
 
-# create an empty list of bullet instances
-bullets = []
+### Game loop
+##running = True
+##while running:
+##    screen.fill(BLACK)
+##    for event in pygame.event.get():
+##        if event.type == pygame.QUIT:
+##            running = False
 
-# Game loop
-running = True
-while running:
-    screen.fill(BLACK)
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    # Controls
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT]:
-        ship.angle -= 5
-    if keys[pygame.K_RIGHT]:
-        ship.angle += 5
-    if keys[pygame.K_UP]:
-        ship.speed = 0.1
-    elif keys[pygame.K_DOWN]:
-        ship.speed = -0.1   
-    else:
-        ship.speed = 0
-    if keys[pygame.K_SPACE]:
-        # each bullet instance starts at the ship position
-        # and fires in the direction of the ship
-        bullets.append(Bullet(ship.x, ship.y, ship.angle))
+##    # Controls
+##    keys = pygame.key.get_pressed()
+##    if keys[pygame.K_LEFT]:
+##        ship.angle -= 5
+##    if keys[pygame.K_RIGHT]:
+##        ship.angle += 5
+##    if keys[pygame.K_UP]:
+##        ship.speed = 0.1
+##    elif keys[pygame.K_DOWN]:
+##        ship.speed = -0.1   
+##    else:
+##        ship.speed = 0
+##    if keys[pygame.K_SPACE]:
+##        # each bullet instance starts at the ship position
+##        # and fires in the direction of the ship
+##        bullets.append(Bullet(ship.x, ship.y, ship.angle))
 
     # Update and draw
     ship.update()
